@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercicio2
 {
-    public class ListaPessoas
+    public class ListaPessoas: IEnumerable<Pessoa>
     {
         private List<Pessoa> pessoas;
+
+        public ListaPessoas()
+        {
+            pessoas = new List<Pessoa>();
+        }
 
         public void AddPessoa(Pessoa p)
         {
@@ -51,5 +54,19 @@ namespace Exercicio2
                 Console.WriteLine($"Código: {pessoa.Codigo}\nNome: {pessoa.Nome}\nSalário: {pessoa.Salario}");
             }
         }
+
+        public IEnumerator<Pessoa> GetEnumerator()
+        {
+            return pessoas.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        
     }
 }

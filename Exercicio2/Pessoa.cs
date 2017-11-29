@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercicio2
 {
@@ -16,7 +12,7 @@ namespace Exercicio2
 
         public int CompareTo(Pessoa other)
         {
-            return Salario.CompareTo(other);
+            return Salario.CompareTo(other.Salario);
         }
     }
 }
